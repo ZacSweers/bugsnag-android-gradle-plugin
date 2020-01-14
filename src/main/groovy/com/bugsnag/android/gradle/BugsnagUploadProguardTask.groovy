@@ -48,6 +48,7 @@ class BugsnagUploadProguardTask extends BugsnagMultiPartUploadTask {
                 return
             }
         } else if (mappingFile.length() == 0) { // proguard's -dontobfuscate generates an empty mapping file
+            project.logger.info("Found empty mapping file, skipping upload")
             return
         }
 
